@@ -1,10 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+using RVHonorAI;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
     private Camera _camera;
+    private PlayerCharacter _myCharacter = null;
+    public float maxDistance;
+    public float maxAngle;
+    public float damage;
+
     void Start()
     {
         GameObject go = GameObject.FindGameObjectWithTag("MainCamera");
@@ -14,19 +18,44 @@ public class PlayerAttack : MonoBehaviour
             return;
         }
         _camera = go.GetComponent<Camera>();
+        if (!TryGetComponent<PlayerCharacter>(out _myCharacter))
+        {
+            Debug.Log("No ICharacter component found");
+            return;
+        }
     }
 
  
     public void DoAttack()
     {
 
-        RaycastHit hit;
-        Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, maxDistance); // should filter this on layers
 
-        if (Physics.Raycast(ray, out hit))
+        //for (int i = 0; i < colliders.Length; i++)
+        foreach (Collider collider in colliders)
         {
-            Transform objectHit = hit.transform;
-            Debug.Log("DoAttack");
+            if (collider.transform == transform)
+                continue;
+  
+            Vector3 direction = collider.transform.position - transform.position;
+            float angle = Vector3.Angle(direction, transform.forward);
+            if (Mathf.Abs(angle) < maxAngle) // limit cone of attack
+            {
+                SendDamage(collider.gameObject, damage);
+            }
+            
         }
+    }
+
+    public void SendDamage(GameObject reciver, float damage)
+    {
+        ICharacter target = null; ;
+        if (!reciver.TryGetComponent<ICharacter>(out target)) // check collider is an ICharacter
+            return;
+        if (target.IsAlly(_myCharacter) || !target.IsEnemy(_myCharacter)) // is it an enemy?
+            return;
+
+        float damageDone = target.ReceiveDamage(damage, _myCharacter as PlayerCharacter, DamageType.Physical);
+        Debug.LogFormat("Damage done {0}", damageDone);
     }
 }
