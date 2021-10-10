@@ -1,7 +1,5 @@
 using UnityEngine;
-#if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
-#endif
 
 namespace Project
 {
@@ -12,6 +10,7 @@ namespace Project
 		public Vector2 look;
 		public bool jump;
 		public bool sprint;
+		public bool attack;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -22,7 +21,12 @@ namespace Project
 		public bool cursorInputForLook = true;
 #endif
 
- 	public void OnMove(InputValue value)
+		public void OnAttack(InputValue value)
+		{
+			AtackInput(value.isPressed);
+		}
+
+		public void OnMove(InputValue value)
 		{
 			MoveInput(value.Get<Vector2>());
 		}
@@ -43,6 +47,11 @@ namespace Project
 		public void OnSprint(InputValue value)
 		{
 			SprintInput(value.isPressed);
+		}
+
+		public void AtackInput(bool newAtackState)
+		{
+			attack = newAtackState;
 		}
 
 		public void MoveInput(Vector2 newMoveDirection)

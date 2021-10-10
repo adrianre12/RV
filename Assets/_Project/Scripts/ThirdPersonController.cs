@@ -89,6 +89,9 @@ namespace Project
 
 		private bool _hasAnimator;
 
+		private float _nextAttackTime;
+		private float _attackDelay = 1.5f;
+
 		private void Awake()
 		{
 			// get a reference to our main camera
@@ -114,7 +117,8 @@ namespace Project
 		private void Update()
 		{
 			_hasAnimator = TryGetComponent(out _animator);
-			
+
+			TargetAndAttack();
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
@@ -163,6 +167,24 @@ namespace Project
 			// Cinemachine will follow this target
 			CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride, _cinemachineTargetYaw, 0.0f);
 		}
+
+		private void TargetAndAttack()
+        {
+			if (!_input.attack)
+				return;
+
+			// There are various ways to handle what todo if the attack animation is playing. For simplicity I am just using time instead of setting up a callback on the animator.
+			if (_nextAttackTime > Time.time)
+				return;
+			_nextAttackTime = Time.time + _attackDelay;
+
+			_input.attack = false;
+			Debug.Log("TargetAndAttack");
+			if (_hasAnimator)
+            {
+				_animator.SetTrigger("SwordSlash"); // this is where you need to select animations based on what weapon you have.
+            }
+        }
 
 		private void Move()
 		{
