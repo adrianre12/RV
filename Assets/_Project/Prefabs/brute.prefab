@@ -2630,7 +2630,7 @@ MonoBehaviour:
   waypointsLoop: 1
   randomWaypoints: 0
   dangerPosition: {x: 0, y: 0, z: 0}
-  lookAtPlayerAndTarget: 0
+  lookAtPlayerAndTarget: 1
   neverFlee: 0
   targetMemory: 20
   onEnteredCombat:
