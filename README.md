@@ -4,7 +4,7 @@ To make this work you will need to install the [RV-SmartAI](https://assetstore.u
 
 **This is work in progress**
 
-## Sceens
+## Scenes
 - Avatar: Just a third person avatar.
 - NPC: Two NPCs who fight each other.
 - NPC-Player: NPC hostile to player. WIP
