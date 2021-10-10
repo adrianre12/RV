@@ -5,16 +5,15 @@ using System;
 using RVHonorAI;
 using RVHonorAI.Combat;
 using RVHonorAI.Systems;
-using RVModules.RVUtilities;
-using RVModules.RVSmartAI;
 using UnityEngine;
 using UnityEngine.Events;
 using Object = UnityEngine.Object;
 
 public class PlayerCharacter : MonoBehaviour, ICharacter
 {
-    //public Vector3 AimOffset { get; } = Vector3.up * 1.5f;
-    // public Vector3 AimPosition => transform.position + AimOffset;
+    /// <summary>
+    /// This is called by the NPC to apply damage to the player. The return value should be the actuall damage done to the player after all protections (buffs, equipment etc) have been applied. 
+    /// </summary>
     public float ReceiveDamage(float _damage, Object _damageSource, DamageType _damageType, bool _damageEnemyOnly = false, Vector3 hitPoint = default, Vector3 _hitForce = default, float forceRadius = default)
     {
         Debug.LogFormat("Damage recieved {0}", _damage);

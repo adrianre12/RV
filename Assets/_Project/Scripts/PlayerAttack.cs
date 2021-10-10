@@ -25,7 +25,9 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
- 
+     /// <summary>
+     /// This is called from an event on the weapon attack animation. For ranged it could be called from a collider trigger on the projectile.
+     /// </summary>
     public void DoAttack()
     {
 
