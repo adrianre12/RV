@@ -1001,7 +1001,7 @@ GameObject:
   - component: {fileID: 6875004110906239683}
   - component: {fileID: 382452073195139594}
   m_Layer: 0
-  m_Name: TedGraph
+  m_Name: TedGraph-fromBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2567,7 +2567,7 @@ MonoBehaviour:
       _dynamic: 0
   _name: Move to waypoint
   expanded: 1
-  selectedElement: {fileID: 0}
+  selectedElement: {fileID: 1269099795606009705}
   description: 
   aiGraph: {fileID: 6875004110906239683}
   stage: {fileID: 3274485886080711767}
@@ -3932,7 +3932,7 @@ MonoBehaviour:
       _dynamic: 0
   _name: Any known targets?
   expanded: 1
-  selectedElement: {fileID: 0}
+  selectedElement: {fileID: 4819267474566312644}
   description: 
   aiGraph: {fileID: 6875004110906239683}
   scorer: {fileID: 4637553353593797626}
@@ -4347,7 +4347,7 @@ MonoBehaviour:
       _dynamic: 0
   _name: Fight or flee
   expanded: 1
-  selectedElement: {fileID: 0}
+  selectedElement: {fileID: 3448725477635369738}
   description: 
   aiGraph: {fileID: 6875004110906239683}
   stage: {fileID: 1057841584719737510}
@@ -4656,7 +4656,7 @@ MonoBehaviour:
       _dynamic: 0
   _name: Main decision node
   expanded: 0
-  selectedElement: {fileID: 2860648166766473904}
+  selectedElement: {fileID: 8840045268551671566}
   description: 
   aiGraph: {fileID: 6875004110906239683}
   stage: {fileID: 1873786780169361868}
