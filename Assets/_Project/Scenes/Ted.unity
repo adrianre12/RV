@@ -947,6 +947,28 @@ PrefabInstance:
       propertyPath: contextProvider
       value: 
       objectReference: {fileID: 743377720}
+    - target: {fileID: 1128504441766827387, guid: dc824234c504e3d47b6a7f644b1fafef,
+        type: 3}
+      propertyPath: references.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128504441766827387, guid: dc824234c504e3d47b6a7f644b1fafef,
+        type: 3}
+      propertyPath: references.Array.data[0].name
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128504441766827387, guid: dc824234c504e3d47b6a7f644b1fafef,
+        type: 3}
+      propertyPath: references.Array.data[0].value
+      value: 
+      objectReference: {fileID: 11400000, guid: ad68f16a4e2b5b0488b7fa5d620b2b46,
+        type: 2}
+    - target: {fileID: 1128504441766827387, guid: dc824234c504e3d47b6a7f644b1fafef,
+        type: 3}
+      propertyPath: secondaryGraphs.Array.data[0].aiGraph
+      value: 
+      objectReference: {fileID: 4139712091856905023, guid: 5a992684895326946bbda9bb92b6f54a,
+        type: 3}
     - target: {fileID: 8385165297353563379, guid: dc824234c504e3d47b6a7f644b1fafef,
         type: 3}
       propertyPath: m_Name

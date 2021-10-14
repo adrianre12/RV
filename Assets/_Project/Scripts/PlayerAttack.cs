@@ -54,7 +54,7 @@ public class PlayerAttack : MonoBehaviour
         ICharacter target = null; ;
         if (!reciver.TryGetComponent<ICharacter>(out target)) // check collider is an ICharacter
             return;
-        if (target.IsAlly(_myCharacter) || !target.IsEnemy(_myCharacter)) // is it an enemy?
+        if (target.IsAlly(_myCharacter) )//|| !target.IsEnemy(_myCharacter)) // is it an enemy?
             return;
 
         float damageDone = target.ReceiveDamage(damage, _myCharacter as PlayerCharacter, DamageType.Physical);

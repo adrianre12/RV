@@ -7,13 +7,8 @@ namespace RVExt
     public class AiUseableGroup : ScriptableObject
     {
         #region Fields
-
-        public AiUseableGroup[] allies;
-        public AiUseableGroup[] enemies;
         public AiUseableGroup[] useable;
 
-        public bool enemyToAll;
-        public bool allyToAll;
         public bool useableToAll;
 
         #endregion

@@ -130,6 +130,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5986078120382575890, guid: 8bb5aa4b6f0c70945b92ef48d91605d2,
+        type: 3}
+      propertyPath: onReceivedDamage.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986078120382575890, guid: 8bb5aa4b6f0c70945b92ef48d91605d2,
+        type: 3}
+      propertyPath: onReceivedDamage.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986078120382575890, guid: 8bb5aa4b6f0c70945b92ef48d91605d2,
+        type: 3}
+      propertyPath: onReceivedDamage.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5986078120382575901, guid: 8bb5aa4b6f0c70945b92ef48d91605d2,
         type: 3}
       propertyPath: aiGroup
@@ -195,6 +210,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682095663377820113, guid: 8bb5aa4b6f0c70945b92ef48d91605d2,
+        type: 3}
+      propertyPath: secondaryGraphs.Array.data[0].expandPerfInfo
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6905068830895704246, guid: 8bb5aa4b6f0c70945b92ef48d91605d2,
         type: 3}
