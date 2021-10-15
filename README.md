@@ -15,3 +15,6 @@ Unfortunatly in 1.0 it is broken due to a missing font and image. I have include
 The fix was;
 - Open the CharCanvas prefab. Set the font in the "text" and "healthNumber". I used the Unity supplied Arial.
 - In the "GameObject" (yes it is called that!) set the Source Image, I used UISprite and then set the Image Type to Filled and fill origin to Left.
+
+## RV-HonorAI Flee Example
+The RedCubeMan does not flee, this is due to his courage being too high relative to the danger from the three BlueCubeMan. Setting the RedCubeMan Courage to 2.5 under the Combat tab will allow the flee action to start.
