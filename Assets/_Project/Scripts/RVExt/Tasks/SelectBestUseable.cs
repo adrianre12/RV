@@ -28,8 +28,8 @@ namespace RVExt
 
         protected override void OnContextUpdated()
         {
-            useableInfosProvider = ContextAs<IUseableInfosProvider>();
-            useableProvider = ContextAs<IUseableProvider>();
+            useableInfosProvider = GetComponentFromContext<IUseableInfosProvider>();
+            useableProvider = GetComponentFromContext<IUseableProvider>();
         }
 
         protected override void Execute(float _deltaTime)

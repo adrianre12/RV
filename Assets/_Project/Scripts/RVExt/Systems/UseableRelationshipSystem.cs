@@ -14,7 +14,7 @@ namespace RVExt
         {
             if (_other.GameObject() == _our.GameObject()) return true;
             if (_our.AiUseableGroup == null || _other.AiUseableGroup == null) return false;
-            return _other.AiUseableGroup.useableToAll || _our.AiUseableGroup == _other.AiUseableGroup || _our.AiUseableGroup.useable.Contains(_our.AiUseableGroup);
+            return _our.AiUseableGroup.useableToAll || _other.AiUseableGroup.useableToAll || _our.AiUseableGroup == _other.AiUseableGroup || _our.AiUseableGroup.useable.Contains(_our.AiUseableGroup);
         }
 
         #endregion

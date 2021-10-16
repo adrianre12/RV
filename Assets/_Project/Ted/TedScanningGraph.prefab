@@ -192,6 +192,7 @@ Transform:
   - {fileID: 4999348386524258906}
   - {fileID: 985513467378322992}
   - {fileID: 8449452575776081017}
+  - {fileID: 1502316688608914476}
   m_Father: {fileID: 8926234298370667241}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -216,8 +217,76 @@ MonoBehaviour:
   tasks:
   - {fileID: 8975965127861723259}
   - {fileID: 7950810871413497420}
+  - {fileID: 208195712399221873}
   - {fileID: 4234557819942578437}
   score: 1
+--- !u!1 &3343667446709904588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1502316688608914476}
+  - component: {fileID: 208195712399221873}
+  - component: {fileID: 7439884528916728520}
+  m_Layer: 0
+  m_Name: Update Useable List (UpdateUseableList)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1502316688608914476
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3343667446709904588}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8525907072106934427}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &208195712399221873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3343667446709904588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5363a7e374d124547a7775ba524484a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 1
+  graphElementName: Update Useable List
+  description: 
+  aiGraph: {fileID: 4139712091856905023}
+  lastScore: 0
+  taskScorers: []
+  useableNotSeenMemorySpan: {fileID: 7439884528916728520}
+--- !u!114 &7439884528916728520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3343667446709904588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aba9ac11ed2a405d873c7105120073da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastValue: 0
+  operator: 0
+  float: {fileID: 0}
+  floatName: UseableMemory
 --- !u!1 &4472905558379963653
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc5a35b0c4ae397499837bdce7b579ad, type: 3}
-  m_Name: UseableNPCgroup
+  m_Name: UseableNPCGroup
   m_EditorClassIdentifier: 
   useable:
-  - {fileID: 11400000}
+  - {fileID: 11400000, guid: d50d158dd36120643903bb8a7dc3c38b, type: 2}
   useableToAll: 0

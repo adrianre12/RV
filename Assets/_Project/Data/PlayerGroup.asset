@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PlayerGroup
   m_EditorClassIdentifier: 
   allies: []
-  enemies: []
+  enemies:
+  - {fileID: 11400000, guid: 0e28ef5fa969c51468d8910c0cfb81c8, type: 2}
   enemyToAll: 0
   allyToAll: 0

@@ -38,9 +38,10 @@ namespace RVExt
         protected override void OnContextUpdated()
         {
             nearbyObjectsProvider = Context as INearbyObjectsProvider;
-            useableInfoProvider = ContextAs<IUseableInfosProvider>();
-            ourCharacter = ContextAs<IUseableRelationship>();
-            useablesDetectionCallbacks = GetComponentFromContext<IUseablesDetectionCallbacks>();
+            var useableCharacter = GetComponentFromContext<IUseableCharacter>();
+            useableInfoProvider = useableCharacter as IUseableInfosProvider;
+            ourCharacter = useableCharacter as IUseableRelationship;
+            useablesDetectionCallbacks = useableCharacter as IUseablesDetectionCallbacks;
             hasUseableDetectionCallbacks = useablesDetectionCallbacks != null;
         }
 

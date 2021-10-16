@@ -4347,7 +4347,7 @@ MonoBehaviour:
       _dynamic: 0
   _name: Fight or flee
   expanded: 1
-  selectedElement: {fileID: 3448725477635369738}
+  selectedElement: {fileID: 6302508181631997655}
   description: 
   aiGraph: {fileID: 6875004110906239683}
   stage: {fileID: 1057841584719737510}
