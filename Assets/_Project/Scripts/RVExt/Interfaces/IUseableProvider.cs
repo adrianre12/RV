@@ -10,14 +10,9 @@ namespace RVExt
         #region Properties
 
         /// <summary>
-        /// Current useable
+        /// Selected useable info
         /// </summary>
-        IUseable Useable { get; }
-
-        /// <summary>
-        /// Current useable info
-        /// </summary>
-        UseableInfo CurrentUseable { get; set; }
+        UseableInfo Selected { get; set; }
 
         #endregion
     }

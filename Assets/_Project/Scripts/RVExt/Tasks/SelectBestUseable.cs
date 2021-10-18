@@ -43,7 +43,7 @@ namespace RVExt
                 nonNullUseables.Add(useableInfo);
             }
 
-            useableProvider.CurrentUseable = GetBest(nonNullUseables);
+            useableProvider.Selected = GetBest(nonNullUseables);
         }
 
         #endregion

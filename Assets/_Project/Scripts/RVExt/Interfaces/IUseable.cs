@@ -20,10 +20,22 @@ namespace RVExt
         Transform Transform { get; }
 
         /// <summary>
-        /// Transform for aiming at useable, also used for checking fov with raycasts etc...
+        /// Transform for use position.
         /// </summary>
-        Transform AimTransform { get; }
+        Transform UseTransform { get; }
 
         #endregion
+
+
+        /// <summary>
+        /// Check to see if the gameObject can use this
+        /// </summary>
+        public bool CanUse(GameObject gameObject);
+
+        /// <summary>
+        /// Use this object
+        /// </summary>
+        public void Use(GameObject gameObject);
+        
     }
 }

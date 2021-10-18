@@ -15,19 +15,15 @@ namespace RVExt
     {
         #region Fields
 
-        private IUseableInfosProvider useableInfoProvider;
         private INearbyObjectsProvider nearbyObjectsProvider;
-        private IUseableRelationship ourCharacter;
+        private IUseableCharacter _useableCharacter;
         public static ObjectPool<UseableInfo> useableInfoPool = new ObjectPool<UseableInfo>(() => new UseableInfo());
-        private IUseablesDetectionCallbacks useablesDetectionCallbacks;
 
         private List<IUseable> newUseables = new List<IUseable>();
 
         [Tooltip("How long should UseableInfo be kept in IUseableInfosProvider.UseableInfos list after not being seen, in seconds")]
         [SerializeField]
         private FloatProvider useableNotSeenMemorySpan;
-
-        private bool hasUseableDetectionCallbacks;
 
         private List<UseableInfo> tisToRemove = new List<UseableInfo>();
 
@@ -38,16 +34,12 @@ namespace RVExt
         protected override void OnContextUpdated()
         {
             nearbyObjectsProvider = Context as INearbyObjectsProvider;
-            var useableCharacter = GetComponentFromContext<IUseableCharacter>();
-            useableInfoProvider = useableCharacter as IUseableInfosProvider;
-            ourCharacter = useableCharacter as IUseableRelationship;
-            useablesDetectionCallbacks = useableCharacter as IUseablesDetectionCallbacks;
-            hasUseableDetectionCallbacks = useablesDetectionCallbacks != null;
+            _useableCharacter = GetComponentFromContext<IUseableCharacter>();
         }
 
         protected override void Execute(float _deltaTime)
         {
-            var useableInfos = useableInfoProvider.UseableInfosDict;
+            var useableInfos = _useableCharacter.UseableInfosDict;
 
             var time = UnityTime.Time;
 
@@ -62,16 +54,19 @@ namespace RVExt
                 var useable = o as IUseable;
                 if (useable == null) continue;
 
+                if (!useable.CanUse(this.gameObject))
+                    continue;
+
                 // already seen him
                 if (useableInfos.ContainsKey(useable))
                 {
                     var useableInfo = useableInfos[useable];
                     useableInfo.LastSeenTime = time;
-                    useableInfo.LastSeenPosition = useable.Transform.position;
+                    useableInfo.LastSeenPosition = useable.UseTransform.position;
                     if (useableInfo.Visible == false)
                     {
                         useableInfo.Visible = true;
-                        if (hasUseableDetectionCallbacks) useablesDetectionCallbacks.OnUseableVisibleAgain?.Invoke(useable);
+                        _useableCharacter.OnUseableVisibleAgain?.Invoke(useable);
                     }
 
                     continue;
@@ -80,24 +75,24 @@ namespace RVExt
                 var useableRelationshipProvider = useable as IUseableRelationship;
                 if (useableRelationshipProvider == null) continue;
 
-                if (ourCharacter.IsUseable(useableRelationshipProvider))
+                if (_useableCharacter.IsUseable(useableRelationshipProvider))
                 {
                     newUseables.Add(useable);
-                    if (hasUseableDetectionCallbacks) useablesDetectionCallbacks.OnNewUseableDetected?.Invoke(useable);
+                    _useableCharacter.OnNewUseableDetected?.Invoke(useable);
                 }
             }
 
             foreach (var useable in newUseables)
             {
-                UseableInfo useableInfo = null;
+                UseableInfo useableInfo;
 
                 useableInfo = useableInfoPool.GetObject();
                 useableInfo.Useable = useable;
                 useableInfos.Add(useableInfo.Useable, useableInfo);
-                useableInfoProvider.UseableInfos.Add(useableInfo);
+                _useableCharacter.UseableInfos.Add(useableInfo);
 
                 useableInfo.LastSeenTime = time;
-                useableInfo.LastSeenPosition = useable.Transform.position;
+                useableInfo.LastSeenPosition = useable.UseTransform.position;
                 useableInfo.Visible = true;
             }
 
@@ -108,20 +103,20 @@ namespace RVExt
                 if (!nearbyObjectsProvider.NearbyObjects.Contains(useableInfo.Useable as Object) && useableInfo.Visible)
                 {
                     useableInfo.Visible = false;
-                    if (hasUseableDetectionCallbacks) useablesDetectionCallbacks.OnUseableNotSeenAnymore?.Invoke(kvp.Key);
+                    _useableCharacter.OnUseableNotSeenAnymore?.Invoke(kvp.Key);
                 }
 
-                if (time > useableInfo.LastSeenTime + useableNotSeenMemorySpan || useableInfo.Useable as Object == null)
+                if (time > useableInfo.LastSeenTime + useableNotSeenMemorySpan || useableInfo.Useable as Object == null || !useableInfo.Useable.CanUse(_useableCharacter.MyGameObject))
                 {
                     tisToRemove.Add(useableInfo);
-                    if (hasUseableDetectionCallbacks) useablesDetectionCallbacks.OnUseableForget?.Invoke(kvp.Key);
+                    _useableCharacter.OnUseableForget?.Invoke(kvp.Key);
                 }
             }
 
             foreach (var useableInfo in tisToRemove)
             {
                 useableInfos.Remove(useableInfo.Useable);
-                useableInfoProvider.UseableInfos.Remove(useableInfo);
+                _useableCharacter.UseableInfos.Remove(useableInfo);
                 useableInfo.OnDespawn();
             }
 

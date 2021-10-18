@@ -932,7 +932,7 @@ BlendTree:
     m_Threshold: 0.8
     m_Position: {x: -0.88619137, y: 0}
     m_TimeScale: 1
-    m_CycleOffset: 0.5
+    m_CycleOffset: 0
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2

@@ -18,8 +18,7 @@ namespace RVExt
 
         private UseableCharacterSettings settings;
 
-        private UseableInfo currentUseable;
-
+        private UseableInfo selectedUseable;
 
         public List<UseableInfo> UseableInfos => _useableInfos;
 
@@ -39,11 +38,16 @@ namespace RVExt
         public Action<IUseable> OnUseableVisibleAgain { get; set; }
         public Action<IUseable> OnUseableForget { get; set; }
 
-        public IUseable Useable => currentUseable?.Useable;
+        //public IUseable Useable => currentUseable?.Useable;
 
-        public UseableInfo CurrentUseable { 
-            get => currentUseable;
-            set => currentUseable = value; }
+        public UseableInfo Selected { 
+            get => selectedUseable;
+            set => selectedUseable = value; }
+
+        public GameObject MyGameObject
+        {
+            get => this.gameObject;
+        }
 
         public bool IsUseable(IUseableRelationship _other) => settings.useableRelationshipSystem.IsUseable(this, _other);
 

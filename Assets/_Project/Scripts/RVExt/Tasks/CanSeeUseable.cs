@@ -6,35 +6,26 @@ namespace RVExt
 {
     public class CanSeeUseable : AiScorer
     {
-        #region Fields
+        private IUseableProvider _useableProvider;
 
-        private IUseableProvider useableProvider;
 
         [SerializeField]
         protected float not;
 
-        #endregion
-
-        #region Properties
-
         protected override string DefaultDescription => "Returns set score if we can see current useable";
 
-        #endregion
-
-        #region Public methods
+        protected override void OnContextUpdated()
+        {
+            _useableProvider = GetComponentFromContext<IUseableProvider>();
+        }
 
         public override float Score(float _deltaTime)
         {
-            if (useableProvider.Useable.Object() == null) return not;
-            return useableProvider.CurrentUseable.Visible ? score : not;
+            /*            if (useableProvider.Useable.Object() == null) return not;
+                        return useableProvider.Selected.Visible ? score : not;*/
+            var _selected = _useableProvider?.Selected;
+            if (_selected == null || _selected.Useable.Object() == null) return not;
+            return _selected.Visible ? score : not;
         }
-
-        #endregion
-
-        #region Not public methods
-
-        protected override void OnContextUpdated() => useableProvider = GetComponentFromContext<IUseableProvider>();
-
-        #endregion
     }
 }
