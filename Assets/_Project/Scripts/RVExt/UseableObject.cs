@@ -14,7 +14,7 @@ namespace RVExt
     {
         public bool canUse = true;
 
-        [Tooltip("Don't set too small to avoid overshoot")]
+        [Tooltip("How close should the NPC be. Don't set too small to avoid overshoot")]
         [SerializeField]
         private float _radius = .2f;
 
@@ -38,11 +38,11 @@ namespace RVExt
         [SerializeField]
         private AiUseableGroup _aiUseableGroup;
 
-        [Tooltip("The time period that this usable will not be visible after use")]
+        [Tooltip("The time period that this usable will not be visible (ignored) after use.")]
         [SerializeField]
         private float _hideTime = 60f;
 
-        private float _minReuseTime = 10f; // how long Use will ignore repeated calls from same object.
+        private float _minReuseTime = 1f; // how long Use will ignore repeated calls from same object.
 
         private Dictionary<GameObject, float> _users = new Dictionary<GameObject, float>();
 
@@ -118,6 +118,11 @@ namespace RVExt
             return canUse;
         }
 
+        /// <summary>
+        /// Override this to perform use action.
+        /// Ensure you call base.Use() first.
+        /// To stop rapid repeated use, either distroy this game object or set hideTime to the interval required
+        /// </summary>
         public virtual void Use(GameObject gameObject)
         {
             if (CheckWaitTime(gameObject, _minReuseTime))

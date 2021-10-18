@@ -29,13 +29,6 @@ namespace RVExt
 
         public override float Score(float _deltaTime)
         {
-            var myPosition = movement.Position;
-            myPosition.y = 0;
-/*            var useablePosition = UseableProvider.Selected.Useable.Transform.position;
-            useablePosition.y = 0;
-            var forwardVector = movement.Rotation * Vector3.forward;
-            var angle = Vector3.Angle(forwardVector, useablePosition - myPosition);*/
-
             var angle = Vector2.Angle((movement.Rotation * Vector3.forward).ToVector2(), UseableProvider.Selected.Useable.Transform.position.ToVector2() - movement.Position.ToVector2());
             return Mathf.Abs(angle) < facingAngle ? score : notFacingScore;
         }
