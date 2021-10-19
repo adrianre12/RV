@@ -8,7 +8,7 @@ namespace RVExt
 
         protected override void OnContextUpdated()
         {
-            _useableCharacter = GetComponentFromContext<IUseableCharacter>();
+            _useableCharacter = ContextAs<IUseableCharacter>();
         }
 
         protected override void Execute(float _deltaTime)

@@ -12,7 +12,7 @@ namespace RVExt
         protected override void OnContextUpdated()
         {
             base.OnContextUpdated();
-            _hitPoints = GetComponentFromContext<IHitPoints>();
+            _hitPoints = ContextAs<IHitPoints>();
         }
 
 /*        public override float Score(float _deltaTime)

@@ -26,12 +26,12 @@ namespace RVExt
 
         protected override string DefaultDescription => "";
 
-        private void OnEnable() => name = "rotateTowardTarget";
+        private void OnEnable() => name = "rotateTowardUseable";
 
         protected override void OnContextUpdated()
         {
             base.OnContextUpdated();
-            useableProvider = GetComponentFromContext<IUseableProvider>();
+            useableProvider = ContextAs<IUseableProvider>();
             characterAnimation = ContextAs<ICharacterAnimationProvider>().CharacterAnimation;
         }
 

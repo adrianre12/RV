@@ -14,7 +14,7 @@ namespace RVExt
         protected override void OnContextUpdated()
         {
             base.OnContextUpdated();
-            _useableProvider = GetComponentFromContext<IUseableProvider>();
+            _useableProvider = ContextAs<IUseableProvider>();
 
         }
 

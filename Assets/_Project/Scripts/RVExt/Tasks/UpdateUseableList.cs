@@ -34,7 +34,7 @@ namespace RVExt
         protected override void OnContextUpdated()
         {
             nearbyObjectsProvider = Context as INearbyObjectsProvider;
-            _useableCharacter = GetComponentFromContext<IUseableCharacter>();
+            _useableCharacter = ContextAs<IUseableCharacter>();
         }
 
         protected override void Execute(float _deltaTime)

@@ -24,7 +24,7 @@ namespace RVExt
         protected override void OnContextUpdated()
         {
             base.OnContextUpdated();
-            UseableProvider = GetComponentFromContext<IUseableProvider>();
+            UseableProvider = ContextAs<IUseableProvider>();
         }
 
         public override float Score(float _deltaTime)

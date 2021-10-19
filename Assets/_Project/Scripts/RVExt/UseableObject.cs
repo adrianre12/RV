@@ -106,7 +106,7 @@ namespace RVExt
         {
             if (CheckWaitTime(gameObject, _minReuseTime))
                 return;
-            _users.Add(gameObject, UnityTime.Time + (_hideTime < _minReuseTime ? _minReuseTime : _hideTime));
+            _users[gameObject] = UnityTime.Time + (_hideTime < _minReuseTime ? _minReuseTime : _hideTime);
         }
 
 
