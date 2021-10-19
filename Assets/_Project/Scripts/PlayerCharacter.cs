@@ -56,7 +56,6 @@ public class PlayerCharacter : MonoBehaviour, ICharacter
 
     public float HitPoints { get; set; } = 100;
 
-//        public AiGroup AiGroup => group;
     public bool TreatNeutralCharactersAsEnemies { get; }
 
     public float DamagePerSecond => 40;
@@ -67,7 +66,6 @@ public class PlayerCharacter : MonoBehaviour, ICharacter
 
     public float AttackRange => 2;
 
-    //AiGroup IRelationship.AiGroup { get; set; }
     AiGroup IRelationship.AiGroup
     {
         get { return group; }

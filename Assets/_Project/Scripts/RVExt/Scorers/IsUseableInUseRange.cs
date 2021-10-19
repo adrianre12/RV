@@ -21,7 +21,7 @@ namespace RVExt
             if (_useableProvider.Selected == null) 
                 return scoreNotInRange;
             IUseable useable = _useableProvider.Selected.Useable;
-            bool arrived = Vector2.Distance(movement.Position.ToVector2(), useable.UseTransform.position.ToVector2()) < useable.Radius;
+            bool arrived = Vector2.Distance(movement.Position.ToVector2(), useable.UseTransform.position.ToVector2()) < useable.UseRadius;
             return arrived ? score : scoreNotInRange;
         }
     }

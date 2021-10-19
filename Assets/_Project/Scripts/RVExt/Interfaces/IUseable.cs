@@ -12,7 +12,7 @@ namespace RVExt
         /// <summary>
         /// Useable's radius, used to calculate distance
         /// </summary>
-        float Radius { get; }
+        float UseRadius { get; }
 
         /// <summary>
         /// Useable's main transform, for checking position, rotation etc.. usually root transform of entity
@@ -36,6 +36,17 @@ namespace RVExt
         /// Use this object
         /// </summary>
         public void Use(GameObject gameObject);
+
+        /// <summary>
+        /// Heal the useable
+        /// </summary>
+        public void Heal(float ammount);
+
+        /// <summary>
+        /// ratio of durability durability/maxDurability
+        /// </summary>
+        /// <returns></returns>
+        public float DurabilityRatio();
         
     }
 }

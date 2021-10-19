@@ -9,7 +9,15 @@ namespace RVExt
         private IUseableInfosProvider useableInfosProvider;
 
         [SerializeField]
-        protected float not;
+        private float not;
+
+        [Tooltip("Look for undammaged useables")]
+        [SerializeField]
+        private bool notDamaged = true;
+
+        [Tooltip("Look for dammaged useables")]
+        [SerializeField]
+        private bool damaged = true;
 
         protected override string DefaultDescription => "Returns score when IUseableInfosProvider.UseableInfos has any entries" +
                                                         "\n Required context: IUseableInfosProvider";
@@ -23,7 +31,15 @@ namespace RVExt
         {
             foreach (var useableInfo in useableInfosProvider.UseableInfos)
             {
-                if (useableInfo != null && useableInfo.Useable.Object() != null) return score;
+
+
+                if (useableInfo != null && useableInfo.Useable.Object() != null)
+                {
+                    if (damaged && useableInfo.Useable.DurabilityRatio() < 1f)
+                        return score;
+                    if (notDamaged && useableInfo.Useable.DurabilityRatio() == 1f)
+                        return score;
+                }
             }
 
             return not;
