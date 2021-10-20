@@ -7,7 +7,7 @@ namespace RVExt
     {
         private IHitPoints _hitPoints;
 
-        public float damageMultiplier = 1;
+        protected override string DefaultDescription => "Returns score scaled by the HitPoint loss, no damage done = 0";
 
         protected override void OnContextUpdated()
         {
@@ -15,14 +15,9 @@ namespace RVExt
             _hitPoints = ContextAs<IHitPoints>();
         }
 
-/*        public override float Score(float _deltaTime)
-        {
-            return damageMultiplier * (1 - _hitPoints.HitPoints / _hitPoints.MaxHitPoints);   
-        }*/
-
         protected override float Score(UseableInfo _parameter)
         {
-            return damageMultiplier * (1 - _hitPoints.HitPoints / _hitPoints.MaxHitPoints);
+            return score * (1 - _parameter.Useable.DurabilityRatio());
         }
     }
 }

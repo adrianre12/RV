@@ -42,8 +42,10 @@ namespace RVExt
                 if (useableInfo.Useable as Object == null) continue;
                 nonNullUseables.Add(useableInfo);
             }
-
-            useableProvider.Selected = GetBest(nonNullUseables);
+            if (nonNullUseables.Count == 0)
+                useableProvider.Selected = null;
+            else
+                useableProvider.Selected = GetBest(nonNullUseables);
         }
 
         #endregion

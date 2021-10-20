@@ -3680,7 +3680,6 @@ MonoBehaviour:
   aiGraph: {fileID: 2901079043826809174}
   scorerType: 0
   score: 1
-  damageMultiplier: 1
 --- !u!1 &6367625021948095049
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,11 +14,20 @@ namespace RVExt
     public class UseableObject : MonoBehaviour, IScannable, IUseable, IUseableRelationship, ITarget, IRelationship, IDamageable, ITargetProvider
     {
         #region Useable
+        [Header("Useable settings")]
         public bool canUse = true;
 
         [Tooltip("How close should the NPC be to use. Don't set too small to avoid overshoot")]
         [SerializeField]
         private float _useRadius = .2f;
+
+        [Tooltip("The time period that this usable will not be visible (ignored) after use.")]
+        [SerializeField]
+        private float _hideTime = 60f;
+
+        [Tooltip("how long Use will ignore repeated calls from same object.")]
+        [SerializeField]
+        private float _minReuseTime = 1f;
 
         [Tooltip("Location to use object from. If unset default is object transform")]
         [SerializeField]
@@ -33,15 +42,7 @@ namespace RVExt
         [SerializeField]
         private UnityEvent onKilled;
 
-        [Tooltip("The time period that this usable will not be visible (ignored) after use.")]
-        [SerializeField]
-        private float _hideTime = 60f;
-
-        private float _minReuseTime = 1f; // how long Use will ignore repeated calls from same object.
-
         private Dictionary<GameObject, float> _users = new Dictionary<GameObject, float>();
-
-        public UseableRelationshipSystem UseableRelationshipSystem => _useableRelationshipSystem;
 
         public float UseRadius => _useRadius;
 
@@ -52,6 +53,8 @@ namespace RVExt
                 }
             set { _useTransform = value; }
         }
+
+        public UseableRelationshipSystem UseableRelationshipSystem => _useableRelationshipSystem;
 
         public Transform VisibilityCheckTransform => transform;
 
@@ -111,11 +114,12 @@ namespace RVExt
         /// Ensure you call base.Use() first.
         /// To stop rapid repeated use, either distroy this game object or set hideTime to the interval required
         /// </summary>
-        public virtual void Use(GameObject gameObject)
+        public virtual bool Use(GameObject gameObject)
         {
             if (CheckWaitTime(gameObject, _minReuseTime))
-                return;
+                return false;
             _users[gameObject] = UnityTime.Time + (_hideTime < _minReuseTime ? _minReuseTime : _hideTime);
+            return true;
         }
 
 
@@ -123,7 +127,13 @@ namespace RVExt
         /// Heals set amount of durability
         /// </summary>
         /// <param name="_amount">Amount of hp to add</param>
-        public virtual void Heal(float _amount) => HitPoints += Mathf.Clamp(_amount, 0, float.MaxValue);
+        public virtual bool Heal(float _amount)
+        {
+            if (!Use(gameObject))
+                return false;
+            HitPoints += Mathf.Clamp(_amount, 0, float.MaxValue);
+            return true;
+        }
 
         public float DurabilityRatio()
         {
@@ -135,7 +145,7 @@ namespace RVExt
 
 
         #region Attackable 
-
+        [Header("Attackable settings")]
         [Tooltip("How close should the NPC be to attack. Don't set too small to avoid overshoot")]
         [SerializeField]
         private float _attackRadius = .2f;

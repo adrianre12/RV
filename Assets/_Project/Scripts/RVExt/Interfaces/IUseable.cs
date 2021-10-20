@@ -35,12 +35,12 @@ namespace RVExt
         /// <summary>
         /// Use this object
         /// </summary>
-        public void Use(GameObject gameObject);
+        public bool Use(GameObject gameObject);
 
         /// <summary>
         /// Heal the useable
         /// </summary>
-        public void Heal(float ammount);
+        public bool Heal(float ammount);
 
         /// <summary>
         /// ratio of durability durability/maxDurability
