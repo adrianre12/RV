@@ -7,10 +7,11 @@ using RVModules.RVCommonGameLibrary.Audio;
 using System.Collections.Generic;
 using RVModules.RVUtilities;
 using System.Collections;
+using UnityEngine.Events;
 
 namespace RVExt
 {
-    public class UseableObject : MonoBehaviour, IScannable, IUseable, IUseableRelationship, ITarget, IRelationship, IDamageable, ITargetProvider, IHitPoints
+    public class UseableObject : MonoBehaviour, IScannable, IUseable, IUseableRelationship, ITarget, IRelationship, IDamageable, ITargetProvider
     {
         #region Useable
         public bool canUse = true;
@@ -28,6 +29,9 @@ namespace RVExt
 
         [SerializeField]
         private AiUseableGroup _aiUseableGroup;
+
+        [SerializeField]
+        private UnityEvent onKilled;
 
         [Tooltip("The time period that this usable will not be visible (ignored) after use.")]
         [SerializeField]
@@ -57,6 +61,11 @@ namespace RVExt
             set => _aiUseableGroup = value;
         }
 
+        public UnityEvent OnKilled
+        {
+            get => onKilled;
+            set => onKilled = value;
+        }
 
         private void Start()
         {

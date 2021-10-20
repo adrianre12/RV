@@ -1,11 +1,11 @@
 using RVHonorAI;
 using RVModules.RVSmartAI;
 using UnityEngine;
- 
+using UnityEngine.Events;
 
 namespace RVExt
 {
-    public interface IUseable : IComponent, IVisibilityCheckTransformProvider
+    public interface IUseable : IComponent, IVisibilityCheckTransformProvider, IHitPoints
     {
         #region Properties
 
@@ -47,6 +47,11 @@ namespace RVExt
         /// </summary>
         /// <returns></returns>
         public float DurabilityRatio();
-        
+
+        /// <summary>
+        /// UnityEvent called when character dies
+        /// </summary>
+        UnityEvent OnKilled { get; set; }
+
     }
 }

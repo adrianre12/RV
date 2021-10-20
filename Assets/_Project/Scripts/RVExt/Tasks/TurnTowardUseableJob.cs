@@ -10,7 +10,7 @@ namespace RVExt
     /// <summary>
     /// Allows to rotate ai agent toward useable using simple transform manipulation and by using root motion
     /// </summary>
-    public class TurnTowardUseable : AiJob
+    public class TurnTowardUseableJob : AiJob
     {
         private float currentRotationSpeed;
 
@@ -26,7 +26,7 @@ namespace RVExt
 
         protected override string DefaultDescription => "";
 
-        private void OnEnable() => name = "rotateTowardUseable";
+        private void OnEnable() => name = "TurnTowardUseable";
 
         protected override void OnContextUpdated()
         {

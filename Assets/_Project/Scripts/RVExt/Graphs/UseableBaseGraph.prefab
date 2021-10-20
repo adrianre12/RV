@@ -232,103 +232,6 @@ MonoBehaviour:
   aiGraph: {fileID: 2901079043826809174}
   scorerType: 0
   score: 0.3
---- !u!1 &794475268958357177
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7237907510952528003}
-  - component: {fileID: 4905741653316262271}
-  m_Layer: 0
-  m_Name: <<<NODE>>> CONDITION NODE <<<NODE>>>
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7237907510952528003
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 794475268958357177}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 8823716322371438126}
-  - {fileID: 503550493483380469}
-  m_Father: {fileID: 8794241658629090936}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4905741653316262271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 794475268958357177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5178d55dae149cb8fc3145f2cdd6095, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  graph: {fileID: 2901079043826809174}
-  position: {x: 586, y: 139.7}
-  ports:
-    keys:
-    - input
-    - output1
-    - output2
-    values:
-    - _fieldName: input
-      _node: {fileID: 4905741653316262271}
-      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
-        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: output2
-        node: {fileID: 1888022890107148073}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _dynamic: 0
-    - _fieldName: output1
-      _node: {fileID: 4905741653316262271}
-      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
-        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: input
-        node: {fileID: 3439000870044495026}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 1
-      _dynamic: 0
-    - _fieldName: output2
-      _node: {fileID: 4905741653316262271}
-      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
-        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections: []
-      _direction: 1
-      _connectionType: 1
-      _dynamic: 0
-  _name: Condition Node
-  expanded: 1
-  selectedElement: {fileID: 7552761840885775788}
-  description: 
-  aiGraph: {fileID: 2901079043826809174}
-  scorer: {fileID: 1303135241361226393}
-  trueTasks: []
-  falseTasks:
-  - {fileID: 7552761840885775788}
-  lastWinner: -1
-  addingFalseTask: 0
-  input: {fileID: 0}
-  output1: {fileID: 0}
-  output2: {fileID: 0}
 --- !u!1 &841519759258213550
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,6 +350,62 @@ MonoBehaviour:
   - {fileID: 2746468709019952853}
   debugValues: 1
   drawParamsDebug: 1
+--- !u!1 &1272263512313182152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1337321621082644808}
+  - component: {fileID: 7024037458053672778}
+  m_Layer: 0
+  m_Name: ' (IsAiJobRunning)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1337321621082644808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272263512313182152}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2658216507051024247}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7024037458053672778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272263512313182152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1615c00d1cc34e1bb25f0ef4f04dc2e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 1
+  graphElementName: 
+  description: 
+  aiGraph: {fileID: 2901079043826809174}
+  scorerType: 2
+  score: 0
+  lastScore: 0
+  jobName: TurnTowardUseable
+  scoreNotRunning: 1
+  jobHandler:
+    conflictBehaviour: 0
+    runningTasksInfo: []
+    queueTasksInfo: []
 --- !u!1 &1400688136612438270
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,6 +456,62 @@ MonoBehaviour:
   lastScore: 0
   taskScorers: []
   state: 2
+--- !u!1 &1503621312684423581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3848745613809751331}
+  - component: {fileID: 9089314209995504469}
+  m_Layer: 0
+  m_Name: ' (IsAiJobRunning)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3848745613809751331
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503621312684423581}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3228720982639773236}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9089314209995504469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503621312684423581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1615c00d1cc34e1bb25f0ef4f04dc2e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 1
+  graphElementName: 
+  description: 
+  aiGraph: {fileID: 2901079043826809174}
+  scorerType: 2
+  score: 0
+  lastScore: 0
+  jobName: TurnTowardUseable
+  scoreNotRunning: 1
+  jobHandler:
+    conflictBehaviour: 0
+    runningTasksInfo: []
+    queueTasksInfo: []
 --- !u!1 &1575279377828417999
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +700,123 @@ MonoBehaviour:
   aiGraph: {fileID: 2901079043826809174}
   scorerType: 0
   score: 0.004
+--- !u!1 &2083646810946210672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7264977180885177859}
+  - component: {fileID: 8040486889748595248}
+  m_Layer: 0
+  m_Name: ' (HighestUtilityWinsStage)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7264977180885177859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083646810946210672}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5378744306695186374}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8040486889748595248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083646810946210672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb3d6db927ce4922ba38661e82f53184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 1
+  graphElementName: 
+  description: 
+  aiGraph: {fileID: 2901079043826809174}
+  utilities:
+  - {fileID: 5729172547119737972}
+  - {fileID: 6585809622389058587}
+--- !u!1 &2105143620848776676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4658876865391852568}
+  - component: {fileID: 8047014880543442082}
+  m_Layer: 0
+  m_Name: ' (TurnTowardUseableJob)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4658876865391852568
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105143620848776676}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1269197094536265481}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8047014880543442082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105143620848776676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e16142e864a485441a3b4297bc3d4a4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 1
+  graphElementName: 
+  description: 
+  aiGraph: {fileID: 2901079043826809174}
+  lastScore: 0
+  taskScorers: []
+  name: 
+  layer: 
+  priority: 0
+  taskRunning: 0
+  jobHandler:
+    conflictBehaviour: 0
+    runningTasksInfo: []
+    queueTasksInfo: []
+  loadBalancingConfig:
+    name: 
+    loadBalancerType: 0
+    valueX: 0
+    valueY: 0
+    calculateDeltaTime: 0
+    useUnscaledDeltaTime: 0
+    dontRemoveWhenEmpty: 0
+  jobPriority: 0
+  jobLayer: 
 --- !u!1 &2209282349765119419
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,7 +898,7 @@ Transform:
   - {fileID: 605773869347078782}
   - {fileID: 2460365283531518739}
   m_Father: {fileID: 8794241658629090936}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1831138575748086502
 MonoBehaviour:
@@ -889,7 +1021,7 @@ MonoBehaviour:
   score: 1
   lastScore: 0
   not: 0
---- !u!1 &2637759801006225360
+--- !u!1 &2526856457080185376
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -897,65 +1029,51 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4097542236094432362}
-  - component: {fileID: 5139460519288118865}
+  - component: {fileID: 1269197094536265481}
+  - component: {fileID: 6585809622389058587}
   m_Layer: 0
-  m_Name: ' (TurnTowardUseable)'
+  m_Name: Default utility (FixedScoreAiUtility)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4097542236094432362
+--- !u!4 &1269197094536265481
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2637759801006225360}
+  m_GameObject: {fileID: 2526856457080185376}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2733678468234759217}
-  m_RootOrder: 0
+  m_Children:
+  - {fileID: 4658876865391852568}
+  m_Father: {fileID: 5378744306695186374}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5139460519288118865
+--- !u!114 &6585809622389058587
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2637759801006225360}
+  m_GameObject: {fileID: 2526856457080185376}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e16142e864a485441a3b4297bc3d4a4c, type: 3}
+  m_Script: {fileID: 11500000, guid: def45cb9138848ecaf4174314b51091c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enabled: 1
-  graphElementName: 
+  graphElementName: Default utility
   description: 
   aiGraph: {fileID: 2901079043826809174}
+  scorers: []
   lastScore: 0
-  taskScorers: []
-  name: 
-  layer: 
-  priority: 0
-  taskRunning: 0
-  jobHandler:
-    conflictBehaviour: 0
-    runningTasksInfo: []
-    queueTasksInfo: []
-  loadBalancingConfig:
-    name: 
-    loadBalancerType: 0
-    valueX: 0
-    valueY: 0
-    calculateDeltaTime: 0
-    useUnscaledDeltaTime: 0
-    dontRemoveWhenEmpty: 0
-  jobPriority: 0
-  jobLayer: 
+  tasks:
+  - {fileID: 8047014880543442082}
+  score: 1
 --- !u!1 &2706394406244022679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,6 +1322,113 @@ MonoBehaviour:
   input: {fileID: 0}
   output1: {fileID: 0}
   output2: {fileID: 0}
+--- !u!1 &2949193742144976600
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6953279938855719177}
+  - component: {fileID: 7949000107940811679}
+  m_Layer: 0
+  m_Name: ' (IsFacingUseable)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6953279938855719177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2949193742144976600}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2658216507051024247}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7949000107940811679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2949193742144976600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72c152cd64e154a4f8e8c1cbfc495c5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 1
+  graphElementName: 
+  description: "Make sure IUseableProvider.Useable is not null before using this
+    scorer\n Required context: IUseableProvider, IMovement"
+  aiGraph: {fileID: 2901079043826809174}
+  scorerType: 0
+  score: 2
+  lastScore: 0
+  notFacingScore: 0
+  facingAngle: 5
+--- !u!1 &3043803394872546083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2658216507051024247}
+  - component: {fileID: 737051126020115191}
+  m_Layer: 0
+  m_Name: Facing Useable (SumAiUtility)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2658216507051024247
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3043803394872546083}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6953279938855719177}
+  - {fileID: 1337321621082644808}
+  m_Father: {fileID: 660011971799472888}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &737051126020115191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3043803394872546083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4d85c947f0c4e2ab3beb43067254768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 1
+  graphElementName: Facing Useable
+  description: 
+  aiGraph: {fileID: 2901079043826809174}
+  scorers:
+  - {fileID: 7949000107940811679}
+  - {fileID: 7024037458053672778}
+  lastScore: 0
+  tasks: []
 --- !u!1 &3238342608461051251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1254,6 +1479,59 @@ MonoBehaviour:
   lastScore: 0
   taskScorers: []
   movementSpeed: 0
+--- !u!1 &3304960010394008434
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8398646943789992352}
+  - component: {fileID: 9189028300335232100}
+  m_Layer: 0
+  m_Name: Default utility (FixedScoreAiUtility)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8398646943789992352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3304960010394008434}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 450530352090251896}
+  m_Father: {fileID: 660011971799472888}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9189028300335232100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3304960010394008434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def45cb9138848ecaf4174314b51091c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 1
+  graphElementName: Default utility
+  description: 
+  aiGraph: {fileID: 2901079043826809174}
+  scorers: []
+  lastScore: 0
+  tasks:
+  - {fileID: 679513414294527689}
+  score: 1
 --- !u!1 &3319648780163287465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1305,103 +1583,6 @@ MonoBehaviour:
   score: 2
   lastScore: 0
   scoreNotInRange: 0
---- !u!1 &3416093293709017658
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2733678468234759217}
-  - component: {fileID: 2447281157265716265}
-  m_Layer: 0
-  m_Name: <<<NODE>>> CONDITION NODE <<<NODE>>>
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2733678468234759217
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3416093293709017658}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4097542236094432362}
-  - {fileID: 6084066197750533646}
-  m_Father: {fileID: 8794241658629090936}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2447281157265716265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3416093293709017658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5178d55dae149cb8fc3145f2cdd6095, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  graph: {fileID: 2901079043826809174}
-  position: {x: 584, y: -56}
-  ports:
-    keys:
-    - input
-    - output1
-    - output2
-    values:
-    - _fieldName: input
-      _node: {fileID: 2447281157265716265}
-      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
-        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: output2
-        node: {fileID: 7141674714483068916}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _dynamic: 0
-    - _fieldName: output1
-      _node: {fileID: 2447281157265716265}
-      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
-        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: input
-        node: {fileID: 2147697576821141534}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 1
-      _dynamic: 0
-    - _fieldName: output2
-      _node: {fileID: 2447281157265716265}
-      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
-        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections: []
-      _direction: 1
-      _connectionType: 1
-      _dynamic: 0
-  _name: Condition Node
-  expanded: 1
-  selectedElement: {fileID: 0}
-  description: 
-  aiGraph: {fileID: 2901079043826809174}
-  scorer: {fileID: 4443491715728021196}
-  trueTasks: []
-  falseTasks:
-  - {fileID: 5139460519288118865}
-  lastWinner: -1
-  addingFalseTask: 1
-  input: {fileID: 0}
-  output1: {fileID: 0}
-  output2: {fileID: 0}
 --- !u!1 &3441141702459323019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,12 +1672,12 @@ Transform:
   - {fileID: 2699575014023945953}
   - {fileID: 9071239797993047414}
   - {fileID: 5570368306829527723}
-  - {fileID: 7237907510952528003}
   - {fileID: 4936203815719398544}
   - {fileID: 2006598080799972681}
   - {fileID: 7262907633827522807}
-  - {fileID: 2733678468234759217}
   - {fileID: 518402422615218272}
+  - {fileID: 660011971799472888}
+  - {fileID: 5378744306695186374}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1520,12 +1701,12 @@ MonoBehaviour:
   - {fileID: 9196094829775541593}
   - {fileID: 5119438865329449606}
   - {fileID: 1888022890107148073}
-  - {fileID: 4905741653316262271}
   - {fileID: 3439000870044495026}
   - {fileID: 1831138575748086502}
   - {fileID: 7141674714483068916}
-  - {fileID: 2447281157265716265}
   - {fileID: 2147697576821141534}
+  - {fileID: 2063161595052567541}
+  - {fileID: 763830592511384475}
   description: 
   owner: {fileID: 0}
   parentGraph: {fileID: 0}
@@ -2206,7 +2387,7 @@ Transform:
   - {fileID: 3052374483398916334}
   - {fileID: 3735073708760704059}
   m_Father: {fileID: 8794241658629090936}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3439000870044495026
 MonoBehaviour:
@@ -2295,7 +2476,7 @@ MonoBehaviour:
         RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output1
-        node: {fileID: 4905741653316262271}
+        node: {fileID: 763830592511384475}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -2566,6 +2747,73 @@ MonoBehaviour:
   utilities:
   - {fileID: 6729454322966338742}
   - {fileID: 8087951361523128684}
+--- !u!1 &4927554657356785972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 450530352090251896}
+  - component: {fileID: 679513414294527689}
+  m_Layer: 0
+  m_Name: ' (TurnTowardUseableJob)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &450530352090251896
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4927554657356785972}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8398646943789992352}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &679513414294527689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4927554657356785972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e16142e864a485441a3b4297bc3d4a4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 1
+  graphElementName: 
+  description: 
+  aiGraph: {fileID: 2901079043826809174}
+  lastScore: 0
+  taskScorers: []
+  name: 
+  layer: 
+  priority: 0
+  taskRunning: 0
+  jobHandler:
+    conflictBehaviour: 0
+    runningTasksInfo: []
+    queueTasksInfo: []
+  loadBalancingConfig:
+    name: 
+    loadBalancerType: 0
+    valueX: 0
+    valueY: 0
+    calculateDeltaTime: 0
+    useUnscaledDeltaTime: 0
+    dontRemoveWhenEmpty: 0
+  jobPriority: 0
+  jobLayer: 
 --- !u!1 &4994104795876727887
 GameObject:
   m_ObjectHideFlags: 0
@@ -2719,7 +2967,7 @@ MonoBehaviour:
   aiGraph: {fileID: 2901079043826809174}
   lastScore: 0
   taskScorers: []
---- !u!1 &5256683975951341236
+--- !u!1 &5378015698129546865
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2727,51 +2975,52 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8823716322371438126}
-  - component: {fileID: 1303135241361226393}
+  - component: {fileID: 3228720982639773236}
+  - component: {fileID: 5729172547119737972}
   m_Layer: 0
-  m_Name: ' (IsFacingUseable)'
+  m_Name: Facing Useable (SumAiUtility)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8823716322371438126
+--- !u!4 &3228720982639773236
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5256683975951341236}
+  m_GameObject: {fileID: 5378015698129546865}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7237907510952528003}
-  m_RootOrder: 0
+  m_Children:
+  - {fileID: 7559903001153168540}
+  - {fileID: 3848745613809751331}
+  m_Father: {fileID: 5378744306695186374}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1303135241361226393
+--- !u!114 &5729172547119737972
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5256683975951341236}
+  m_GameObject: {fileID: 5378015698129546865}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72c152cd64e154a4f8e8c1cbfc495c5e, type: 3}
+  m_Script: {fileID: 11500000, guid: b4d85c947f0c4e2ab3beb43067254768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enabled: 1
-  graphElementName: 
-  description: "Make sure IUseableProvider.Useable is not null before using this
-    scorer\n Required context: IUseableProvider, IMovement"
+  graphElementName: Facing Useable
+  description: 
   aiGraph: {fileID: 2901079043826809174}
-  scorerType: 0
-  score: 1
+  scorers:
+  - {fileID: 2617515914636279422}
+  - {fileID: 9089314209995504469}
   lastScore: 0
-  notFacingScore: 0
-  facingAngle: 5
+  tasks: []
 --- !u!1 &5396944379953222687
 GameObject:
   m_ObjectHideFlags: 0
@@ -3432,7 +3681,7 @@ MonoBehaviour:
   scorerType: 0
   score: 1
   damageMultiplier: 1
---- !u!1 &6347335492572470362
+--- !u!1 &6367625021948095049
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3440,65 +3689,141 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 503550493483380469}
-  - component: {fileID: 7552761840885775788}
+  - component: {fileID: 660011971799472888}
+  - component: {fileID: 2063161595052567541}
   m_Layer: 0
-  m_Name: Turn Toward Useable (TurnTowardUseable)
+  m_Name: <<<NODE>>> HIGHEST UTILITY WINS STAGE NODE <<<NODE>>>
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &503550493483380469
+--- !u!4 &660011971799472888
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6347335492572470362}
+  m_GameObject: {fileID: 6367625021948095049}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7237907510952528003}
-  m_RootOrder: 1
+  m_Children:
+  - {fileID: 3325527856154229317}
+  - {fileID: 8398646943789992352}
+  - {fileID: 2658216507051024247}
+  m_Father: {fileID: 8794241658629090936}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7552761840885775788
+--- !u!114 &2063161595052567541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6347335492572470362}
+  m_GameObject: {fileID: 6367625021948095049}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e16142e864a485441a3b4297bc3d4a4c, type: 3}
+  m_Script: {fileID: 11500000, guid: d047a2e09a29424dbd0f2ce5afb46ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enabled: 1
-  graphElementName: Turn Toward Useable
+  graph: {fileID: 2901079043826809174}
+  position: {x: 552, y: -40}
+  ports:
+    keys:
+    - output1
+    - output2
+    - output3
+    - output4
+    - output5
+    - output6
+    - output7
+    - input
+    values:
+    - _fieldName: output1
+      _node: {fileID: 2063161595052567541}
+      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
+        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 2147697576821141534}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output2
+      _node: {fileID: 2063161595052567541}
+      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
+        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output3
+      _node: {fileID: 2063161595052567541}
+      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
+        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output4
+      _node: {fileID: 2063161595052567541}
+      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
+        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output5
+      _node: {fileID: 2063161595052567541}
+      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
+        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output6
+      _node: {fileID: 2063161595052567541}
+      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
+        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output7
+      _node: {fileID: 2063161595052567541}
+      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
+        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: 2063161595052567541}
+      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
+        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output2
+        node: {fileID: 7141674714483068916}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+  _name: Highest Utility Wins Stage Node
+  expanded: 1
+  selectedElement: {fileID: 9189028300335232100}
   description: 
   aiGraph: {fileID: 2901079043826809174}
-  lastScore: 0
-  taskScorers: []
-  name: 
-  layer: 
-  priority: 0
-  taskRunning: 0
-  jobHandler:
-    conflictBehaviour: 0
-    runningTasksInfo: []
-    queueTasksInfo: []
-  loadBalancingConfig:
-    name: 
-    loadBalancerType: 0
-    valueX: 0
-    valueY: 0
-    calculateDeltaTime: 0
-    useUnscaledDeltaTime: 0
-    dontRemoveWhenEmpty: 0
-  jobPriority: 0
-  jobLayer: 
+  stage: {fileID: 167133417669886397}
+  output1: {fileID: 0}
+  output2: {fileID: 0}
+  output3: {fileID: 0}
+  output4: {fileID: 0}
+  output5: {fileID: 0}
+  output6: {fileID: 0}
+  output7: {fileID: 0}
+  input: {fileID: 0}
 --- !u!1 &6380112264078717288
 GameObject:
   m_ObjectHideFlags: 0
@@ -3654,59 +3979,6 @@ MonoBehaviour:
   aiGraph: {fileID: 2901079043826809174}
   utilities:
   - {fileID: 6666577461540879250}
---- !u!1 &6559375706096384197
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6084066197750533646}
-  - component: {fileID: 4443491715728021196}
-  m_Layer: 0
-  m_Name: ' (IsFacingUseable)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6084066197750533646
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6559375706096384197}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2733678468234759217}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4443491715728021196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6559375706096384197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72c152cd64e154a4f8e8c1cbfc495c5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enabled: 1
-  graphElementName: 
-  description: "Make sure IUseableProvider.Useable is not null before using this
-    scorer\n Required context: IUseableProvider, IMovement"
-  aiGraph: {fileID: 2901079043826809174}
-  scorerType: 0
-  score: 1
-  lastScore: 0
-  notFacingScore: 0
-  facingAngle: 5
 --- !u!1 &6651666470249851411
 GameObject:
   m_ObjectHideFlags: 0
@@ -4124,7 +4396,7 @@ MonoBehaviour:
         RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 4905741653316262271}
+        node: {fileID: 763830592511384475}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -4194,6 +4466,59 @@ MonoBehaviour:
   output6: {fileID: 0}
   output7: {fileID: 0}
   input: {fileID: 0}
+--- !u!1 &7363183712899943364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7559903001153168540}
+  - component: {fileID: 2617515914636279422}
+  m_Layer: 0
+  m_Name: ' (IsFacingUseable)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7559903001153168540
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7363183712899943364}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3228720982639773236}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2617515914636279422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7363183712899943364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72c152cd64e154a4f8e8c1cbfc495c5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 1
+  graphElementName: 
+  description: "Make sure IUseableProvider.Useable is not null before using this
+    scorer\n Required context: IUseableProvider, IMovement"
+  aiGraph: {fileID: 2901079043826809174}
+  scorerType: 0
+  score: 2
+  lastScore: 0
+  notFacingScore: 0
+  facingAngle: 5
 --- !u!1 &7533915544089688648
 GameObject:
   m_ObjectHideFlags: 0
@@ -4357,6 +4682,56 @@ MonoBehaviour:
   aiGraph: {fileID: 2901079043826809174}
   lastScore: 0
   taskScorers: []
+--- !u!1 &7789636423170200943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3325527856154229317}
+  - component: {fileID: 167133417669886397}
+  m_Layer: 0
+  m_Name: ' (HighestUtilityWinsStage)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3325527856154229317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789636423170200943}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 660011971799472888}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &167133417669886397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789636423170200943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb3d6db927ce4922ba38661e82f53184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 1
+  graphElementName: 
+  description: 
+  aiGraph: {fileID: 2901079043826809174}
+  utilities:
+  - {fileID: 737051126020115191}
+  - {fileID: 9189028300335232100}
 --- !u!1 &7841986501990740163
 GameObject:
   m_ObjectHideFlags: 0
@@ -4510,7 +4885,7 @@ Transform:
   - {fileID: 540681636923758395}
   - {fileID: 362447113838014333}
   m_Father: {fileID: 8794241658629090936}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2147697576821141534
 MonoBehaviour:
@@ -4599,7 +4974,7 @@ MonoBehaviour:
         RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output1
-        node: {fileID: 2447281157265716265}
+        node: {fileID: 2063161595052567541}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -4821,6 +5196,152 @@ MonoBehaviour:
   aiGraph: {fileID: 2901079043826809174}
   lastScore: 0
   taskScorers: []
+--- !u!1 &8250693624150227650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5378744306695186374}
+  - component: {fileID: 763830592511384475}
+  m_Layer: 0
+  m_Name: <<<NODE>>> HIGHEST UTILITY WINS STAGE NODE <<<NODE>>>
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5378744306695186374
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8250693624150227650}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7264977180885177859}
+  - {fileID: 1269197094536265481}
+  - {fileID: 3228720982639773236}
+  m_Father: {fileID: 8794241658629090936}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &763830592511384475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8250693624150227650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d047a2e09a29424dbd0f2ce5afb46ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  graph: {fileID: 2901079043826809174}
+  position: {x: 552, y: 120}
+  ports:
+    keys:
+    - output1
+    - output2
+    - output3
+    - output4
+    - output5
+    - output6
+    - output7
+    - input
+    values:
+    - _fieldName: output1
+      _node: {fileID: 763830592511384475}
+      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
+        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 3439000870044495026}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output2
+      _node: {fileID: 763830592511384475}
+      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
+        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output3
+      _node: {fileID: 763830592511384475}
+      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
+        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output4
+      _node: {fileID: 763830592511384475}
+      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
+        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output5
+      _node: {fileID: 763830592511384475}
+      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
+        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output6
+      _node: {fileID: 763830592511384475}
+      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
+        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: output7
+      _node: {fileID: 763830592511384475}
+      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
+        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: 763830592511384475}
+      _typeQualifiedName: RVModules.RVSmartAI.GraphElements.Utilities.AiUtility,
+        RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output2
+        node: {fileID: 7141674714483068916}
+        reroutePoints: []
+      - fieldName: output2
+        node: {fileID: 1888022890107148073}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+  _name: Highest Utility Wins Stage Node
+  expanded: 1
+  selectedElement: {fileID: 5729172547119737972}
+  description: 
+  aiGraph: {fileID: 2901079043826809174}
+  stage: {fileID: 8040486889748595248}
+  output1: {fileID: 0}
+  output2: {fileID: 0}
+  output3: {fileID: 0}
+  output4: {fileID: 0}
+  output5: {fileID: 0}
+  output6: {fileID: 0}
+  output7: {fileID: 0}
+  input: {fileID: 0}
 --- !u!1 &8259736164149775148
 GameObject:
   m_ObjectHideFlags: 0
@@ -4961,7 +5482,7 @@ Transform:
   - {fileID: 8404681718891111029}
   - {fileID: 4560619377919006015}
   m_Father: {fileID: 8794241658629090936}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7141674714483068916
 MonoBehaviour:
@@ -5002,7 +5523,7 @@ MonoBehaviour:
         RVSmartAI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: input
-        node: {fileID: 2447281157265716265}
+        node: {fileID: 2063161595052567541}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
