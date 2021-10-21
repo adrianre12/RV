@@ -29,7 +29,7 @@ namespace RVExt
         {
             transform = base.transform;
             useable = transform.parent.GetComponent<IUseable>();
-            infoText.text = transform.name;
+            infoText.text = transform.parent.name;
             camTransform = Camera.main.transform;
             useable.OnKilled.AddListener(() => Destroy(gameObject));
 
