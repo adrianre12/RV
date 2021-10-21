@@ -15,6 +15,14 @@ namespace RVExt
         private IUseableProvider useableProvider;
         private List<UseableInfo> nonNullUseables = new List<UseableInfo>();
 
+        [Tooltip("Look for undammaged useables")]
+        [SerializeField]
+        private bool notDamaged = true;
+
+        [Tooltip("Look for dammaged useables")]
+        [SerializeField]
+        private bool damaged = true;
+
         #endregion
 
         #region Properties
@@ -40,7 +48,10 @@ namespace RVExt
             {
                 var useableInfo = useableInfosProvider.UseableInfos[i];
                 if (useableInfo.Useable as Object == null) continue;
-                nonNullUseables.Add(useableInfo);
+                if (damaged && useableInfo.Useable.DurabilityRatio() < 1f)
+                    nonNullUseables.Add(useableInfo);
+                if (notDamaged && useableInfo.Useable.DurabilityRatio() == 1f)
+                    nonNullUseables.Add(useableInfo);
             }
             if (nonNullUseables.Count == 0)
                 useableProvider.Selected = null;

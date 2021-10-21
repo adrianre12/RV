@@ -23,6 +23,11 @@ namespace RVExt
         /// </summary>
         bool IsUseable(IUseableRelationship _other);
 
+        /// <summary>
+        /// Check's relationship to other
+        /// </summary>
+        bool IsHealable(IUseableRelationship _other);
+
         #endregion
     }
 }

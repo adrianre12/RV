@@ -51,6 +51,9 @@ namespace RVExt
 
         public bool IsUseable(IUseableRelationship _other) => settings.useableRelationshipSystem.IsUseable(this, _other);
 
+        public bool IsHealable(IUseableRelationship _other) => settings.useableRelationshipSystem.IsHealable(this, _other);
+
+
         protected override void Awake()
         {
             base.Awake();

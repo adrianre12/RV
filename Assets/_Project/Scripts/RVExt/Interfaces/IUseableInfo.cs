@@ -30,6 +30,10 @@ namespace RVExt
         [SerializeField]
         private bool visible;
 
+        private bool isUseable;
+
+        private bool isHealable;
+
         private IUseable useable;
 
         #endregion
@@ -69,6 +73,17 @@ namespace RVExt
             set => visible = value;
         }
 
+        public bool IsUseable
+        {
+            get => isUseable;
+            set => isUseable = value;
+        }
+
+        public bool IsHealable
+        {
+            get => isHealable;
+            set => isHealable = value;
+        }
         public Type MyType { get; }
 
         #endregion

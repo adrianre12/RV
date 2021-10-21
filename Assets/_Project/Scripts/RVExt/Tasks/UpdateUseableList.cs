@@ -19,8 +19,6 @@ namespace RVExt
         private IUseableCharacter _useableCharacter;
         public static ObjectPool<UseableInfo> useableInfoPool = new ObjectPool<UseableInfo>(() => new UseableInfo());
 
-        private List<IUseable> newUseables = new List<IUseable>();
-
         [Tooltip("How long should UseableInfo be kept in IUseableInfosProvider.UseableInfos list after not being seen, in seconds")]
         [SerializeField]
         private FloatProvider useableNotSeenMemorySpan;
@@ -44,7 +42,7 @@ namespace RVExt
             var time = UnityTime.Time;
 
             // get all useables not known earlier earlier
-            newUseables.Clear();
+            //newUseables.Clear();
 
             // find all useables that are enemies
             foreach (var o in nearbyObjectsProvider.NearbyObjects)
@@ -57,7 +55,7 @@ namespace RVExt
                 if (!useable.CanUse(this.gameObject))
                     continue;
 
-                // already seen him
+                // already seen it
                 if (useableInfos.ContainsKey(useable))
                 {
                     var useableInfo = useableInfos[useable];
@@ -75,25 +73,25 @@ namespace RVExt
                 var useableRelationshipProvider = useable as IUseableRelationship;
                 if (useableRelationshipProvider == null) continue;
 
-                if (_useableCharacter.IsUseable(useableRelationshipProvider))
+                bool isUseable = _useableCharacter.IsUseable(useableRelationshipProvider);
+                bool isHealable = _useableCharacter.IsHealable(useableRelationshipProvider);
+                if (isUseable || isHealable)
                 {
-                    newUseables.Add(useable);
+                    UseableInfo useableInfo;
+
+                    useableInfo = useableInfoPool.GetObject();
+                    useableInfo.Useable = useable;
+                    useableInfos.Add(useableInfo.Useable, useableInfo);
+                    _useableCharacter.UseableInfos.Add(useableInfo);
+
+                    useableInfo.LastSeenTime = time;
+                    useableInfo.LastSeenPosition = useable.UseTransform.position;
+                    useableInfo.Visible = true;
+                    useableInfo.IsUseable = isUseable;
+                    useableInfo.IsHealable = isHealable;
+
                     _useableCharacter.OnNewUseableDetected?.Invoke(useable);
                 }
-            }
-
-            foreach (var useable in newUseables)
-            {
-                UseableInfo useableInfo;
-
-                useableInfo = useableInfoPool.GetObject();
-                useableInfo.Useable = useable;
-                useableInfos.Add(useableInfo.Useable, useableInfo);
-                _useableCharacter.UseableInfos.Add(useableInfo);
-
-                useableInfo.LastSeenTime = time;
-                useableInfo.LastSeenPosition = useable.UseTransform.position;
-                useableInfo.Visible = true;
             }
 
             foreach (var kvp in useableInfos)

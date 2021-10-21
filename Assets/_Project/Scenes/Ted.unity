@@ -233,7 +233,7 @@ PrefabInstance:
     - target: {fileID: 6905068830895704246, guid: 8bb5aa4b6f0c70945b92ef48d91605d2,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bb5aa4b6f0c70945b92ef48d91605d2, type: 3}
@@ -1163,6 +1163,12 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[0].position.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7870978656824919409, guid: b8791cb785229014b9db24edcc202c04,
+        type: 3}
+      propertyPath: aiUseableGroup
+      value: 
+      objectReference: {fileID: 11400000, guid: b4081128c3578c34e9c48e3c9dda7011,
+        type: 2}
     - target: {fileID: 7870978656824919413, guid: b8791cb785229014b9db24edcc202c04,
         type: 3}
       propertyPath: m_WalkableMask

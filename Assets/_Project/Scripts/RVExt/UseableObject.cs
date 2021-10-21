@@ -64,6 +64,10 @@ namespace RVExt
             set => _aiUseableGroup = value;
         }
 
+        public bool IsUseable(IUseableRelationship _other) => _useableRelationshipSystem.IsUseable(this, _other);
+
+        public bool IsHealable(IUseableRelationship _other) => _useableRelationshipSystem.IsHealable(this, _other);
+
         public UnityEvent OnKilled
         {
             get => onKilled;
@@ -200,8 +204,6 @@ namespace RVExt
         public Transform Transform => transform;
 
         public Transform AimTransform => _aimTransform ?? transform;
-
-        public bool IsUseable(IUseableRelationship _other) => _useableRelationshipSystem.IsUseable(this, _other);
 
         //IRelationship
         public bool IsAlly(IRelationship _other) => _relationshipSystem.IsAlly(this, _other);

@@ -11,16 +11,8 @@ namespace RVExt
         [SerializeField]
         private float not;
 
-        [Tooltip("Look for undammaged useables")]
-        [SerializeField]
-        private bool notDamaged = true;
 
-        [Tooltip("Look for dammaged useables")]
-        [SerializeField]
-        private bool damaged = true;
-
-        protected override string DefaultDescription => "Returns score when IUseableInfosProvider.UseableInfos has any entries" +
-                                                        "\n Required context: IUseableInfosProvider";
+        protected override string DefaultDescription => "Returns score when either IsUseable is true or if IsHealable and HitPoints is less than 100%";
 
         protected override void OnContextUpdated()
         {
@@ -35,9 +27,9 @@ namespace RVExt
 
                 if (useableInfo != null && useableInfo.Useable.Object() != null)
                 {
-                    if (damaged && useableInfo.Useable.DurabilityRatio() < 1f)
+                    if (useableInfo.IsUseable)
                         return score;
-                    if (notDamaged && useableInfo.Useable.DurabilityRatio() == 1f)
+                    if (useableInfo.IsHealable && useableInfo.Useable.DurabilityRatio() < 1f)
                         return score;
                 }
             }
