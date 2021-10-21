@@ -19,15 +19,15 @@ public class ShowAiPath : MonoBehaviour
 
     private IEnumerator Draw()
     {
-        while (true)
+        while (_navMeshAgent != null)
         {
-            yield return new WaitForSeconds(1f); //draw every 1s;
             if (_navMeshAgent.hasPath)
             {
                 Vector3[] corners = _navMeshAgent.path.corners;
                 for (int i = 0; i < corners.Length - 1; i++)
                     Debug.DrawLine(corners[i], corners[i + 1], Color.red, 1f, false);
             }
+            yield return new WaitForSeconds(1f); //draw every 1s;
         }
     }
 }

@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc5a35b0c4ae397499837bdce7b579ad, type: 3}
-  m_Name: UseableNPCGroup
+  m_Script: {fileID: 11500000, guid: fa0f92bc5d154aae8ba2b5566c74e19d, type: 3}
+  m_Name: DefenderGroup
   m_EditorClassIdentifier: 
-  useable:
-  - {fileID: 11400000, guid: d50d158dd36120643903bb8a7dc3c38b, type: 2}
-  useableToAll: 0
+  allies: []
+  enemies:
+  - {fileID: 11400000, guid: 0e28ef5fa969c51468d8910c0cfb81c8, type: 2}
+  enemyToAll: 0
+  allyToAll: 0

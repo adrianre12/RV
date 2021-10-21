@@ -38,8 +38,6 @@ namespace RVExt
         public Action<IUseable> OnUseableVisibleAgain { get; set; }
         public Action<IUseable> OnUseableForget { get; set; }
 
-        //public IUseable Useable => currentUseable?.Useable;
-
         public UseableInfo Selected { 
             get => selectedUseable;
             set => selectedUseable = value; }
@@ -48,6 +46,8 @@ namespace RVExt
         {
             get => this.gameObject;
         }
+
+        public float HealAmmount => settings.healAmmount;
 
         public bool IsUseable(IUseableRelationship _other) => settings.useableRelationshipSystem.IsUseable(this, _other);
 

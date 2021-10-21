@@ -8,5 +8,7 @@ namespace RVExt
         public float UseableMemory { get; }
 
         public GameObject MyGameObject { get; }
+
+        public float HealAmmount { get; }
     }
 }

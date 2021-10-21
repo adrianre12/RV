@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5a35b0c4ae397499837bdce7b579ad, type: 3}
   m_Name: UseableDefenderGroup
   m_EditorClassIdentifier: 
-  useable: []
+  useable:
+  - {fileID: 0}
   healable:
   - {fileID: 11400000, guid: fa2a6746dbb6a284e9b534ffd89e9902, type: 2}
   useableToAll: 0

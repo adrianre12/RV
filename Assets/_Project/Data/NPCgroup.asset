@@ -15,5 +15,6 @@ MonoBehaviour:
   allies: []
   enemies:
   - {fileID: 11400000, guid: 0c9c875d670ccbe4c88a891c8dab7961, type: 2}
+  - {fileID: 11400000, guid: b5b16eb5aa4d52f4a9b0e981fc65db8a, type: 2}
   enemyToAll: 0
   allyToAll: 0

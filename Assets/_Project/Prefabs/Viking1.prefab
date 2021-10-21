@@ -1251,6 +1251,56 @@ Transform:
   m_Father: {fileID: 4527904147596246563}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3703812379056651386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4782349434936550204}
+  - component: {fileID: 1937214490760285978}
+  m_Layer: 0
+  m_Name: Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4782349434936550204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3703812379056651386}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7688185659571714730}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1937214490760285978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3703812379056651386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26427dc30a1043398e29e9ee6bc0a948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 40
+  range: 2
+  attackDuration: 2
+  attackAngle: 20
+  attackSound: {fileID: 0}
+  hitSound: {fileID: 0}
+  damageType: 0
 --- !u!1 &3791171963509802079
 GameObject:
   m_ObjectHideFlags: 0
@@ -2060,6 +2110,7 @@ GameObject:
   - component: {fileID: 7870978656824919413}
   - component: {fileID: 7870978656824919412}
   - component: {fileID: 7870978656824919419}
+  - component: {fileID: 416586823}
   m_Layer: 0
   m_Name: Viking1
   m_TagString: Untagged
@@ -2089,6 +2140,7 @@ Transform:
   - {fileID: 8510340867650284517}
   - {fileID: 7733271613915717495}
   - {fileID: 5372662567488047948}
+  - {fileID: 4782349434936550204}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2139,7 +2191,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useableRelationshipSystem: {fileID: 11400000, guid: ad68f16a4e2b5b0488b7fa5d620b2b46,
     type: 2}
-  aiUseableGroup: {fileID: 11400000, guid: bf5c189c9d6beae439567da581744987, type: 2}
+  aiUseableGroup: {fileID: 11400000, guid: b4081128c3578c34e9c48e3c9dda7011, type: 2}
+  healAmmount: 150
 --- !u!114 &7870978656824919408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2153,7 +2206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:
-  - radius: 5
+  - radius: 0
     position: {x: 0, y: 0, z: 0}
   moveTarget: {fileID: 0}
   setTarget: {fileID: 0}
@@ -2166,19 +2219,19 @@ MonoBehaviour:
   targets: []
   useLocalPositionForWaypoints: 1
   nearbyObjects: []
-  aiGroup: {fileID: 0}
+  aiGroup: {fileID: 11400000, guid: 0739aa217482dfe4b9bb9e0911c361ec, type: 2}
   state: 0
   courage: 50
   fovMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   treatNeutralCharactersAsEnemies: 0
-  useFieldOfView: 0
-  fovAngle: 90
-  useRaycastsForFov: 0
+  useFieldOfView: 1
+  fovAngle: 180
+  useRaycastsForFov: 1
   headTransform: {fileID: 3139444256293983973}
   detectionRange: 15
-  alwaysVisibleRange: 2
+  alwaysVisibleRange: 0.5
   waypointsLoop: 1
   randomWaypoints: 0
   dangerPosition: {x: 0, y: 0, z: 0}
@@ -2407,6 +2460,18 @@ MonoBehaviour:
   debutTargetDetectionEvents: 0
   radius: 0.5
   danger: 0
+--- !u!114 &416586823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7060022106372071440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c35afbc858dcb143841d0286ba1c6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7126112730927600979
 GameObject:
   m_ObjectHideFlags: 0
@@ -3164,7 +3229,7 @@ PrefabInstance:
         type: 3}
       propertyPath: aiGraph
       value: 
-      objectReference: {fileID: 2901079043826809174, guid: c70c54e95b21b2a489bac58d4ff9fec2,
+      objectReference: {fileID: 6889070860101071277, guid: bc17ca3e12287a643955602a110f01e9,
         type: 3}
     - target: {fileID: 1128504441766827387, guid: dc824234c504e3d47b6a7f644b1fafef,
         type: 3}

@@ -1473,7 +1473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 40
-  range: 0.5
+  range: 2.5
   attackDuration: 2
   attackAngle: 20
   attackSound: {fileID: 0}
@@ -2620,14 +2620,14 @@ MonoBehaviour:
   courage: 50
   fovMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   treatNeutralCharactersAsEnemies: 0
-  useFieldOfView: 0
+  useFieldOfView: 1
   fovAngle: 90
-  useRaycastsForFov: 0
+  useRaycastsForFov: 1
   headTransform: {fileID: 4753544739556965623}
   detectionRange: 15
-  alwaysVisibleRange: 2
+  alwaysVisibleRange: 0.5
   waypointsLoop: 1
   randomWaypoints: 0
   dangerPosition: {x: 0, y: 0, z: 0}

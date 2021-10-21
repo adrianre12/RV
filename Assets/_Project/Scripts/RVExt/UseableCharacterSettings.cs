@@ -9,5 +9,8 @@ namespace RVExt
 
         [SerializeField]
         public AiUseableGroup aiUseableGroup;
+
+        [SerializeField]
+        public float healAmmount = 50f;
     }
 }

@@ -15,7 +15,7 @@ namespace RVExt
 
         protected override void Execute(float _deltaTime)
         {
-            _useableCharacter.Selected.Useable.Heal(healAmount);
+            _useableCharacter.Selected.Useable.Heal(_useableCharacter.HealAmmount);
         }
     }
 }
