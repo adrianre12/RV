@@ -391,7 +391,7 @@ MonoBehaviour:
   scanRange: {fileID: 9154457151727705561}
   checkVisibilityWithRaycast: 0
   fovAngle: {fileID: 2470016799029066153}
-  drawFovRaycastsDebugLines: 1
+  drawFovRaycastsDebugLines: 0
   debugLinesDuration: 0.5
   loadBalancedTask: 0
   checksPerTick: 1
@@ -575,7 +575,7 @@ MonoBehaviour:
       _dynamic: 0
   _name: Scan
   expanded: 1
-  selectedElement: {fileID: 8204927353988022122}
+  selectedElement: {fileID: 7950810871413497420}
   description: 
   aiGraph: {fileID: 4139712091856905023}
   stage: {fileID: 4986364368290803558}

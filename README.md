@@ -8,6 +8,7 @@ To make this work you will need to install the [RV-SmartAI](https://assetstore.u
 - Avatar: Just a third person avatar.
 - NPC: Two NPCs who fight each other.
 - NPC-Player: NPC hostile to player. WIP
+- NPC-Siege: Proff of concept for AI intereacting with objects, see RVExt. This example is a siege where a defender repairs walls while they are being attacked. WIP
 
 ## Health Bar
 RV-HonorAI comes with a health bar prefab called CharCanvas. If this is added as a child of a NPC the health bar will automatically be displayed and updated.
@@ -18,3 +19,7 @@ The fix was;
 
 ## RV-HonorAI Flee Example
 The RedCubeMan does not flee, this is due to his courage being too high relative to the danger from the three BlueCubeMan. Setting the RedCubeMan Courage to 2.5 under the Combat tab will allow the flee action to start.
+
+## RVExt
+My first go at extending RV-Honor so that AI can interact with non AI objects. I have implemented the ability to Target(attack), Use and Heal objects. The objective is to allow the creation of AI characters that can interact with there surroundings, examples; Farmers, animals and destructible/repairable objects.
+This is written to not require any changes in the stock RV-Honor 1.0, and will probably need re-writing for later releases.
