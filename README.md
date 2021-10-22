@@ -8,17 +8,20 @@ To make this work you will need to install the [RV-SmartAI](https://assetstore.u
 - Avatar: Just a third person avatar.
 - NPC: Two NPCs who fight each other.
 - NPC-Player: NPC hostile to player. WIP
-- NPC-Siege: Proff of concept for AI intereacting with objects, see RVExt. This example is a siege where a defender repairs walls while they are being attacked. WIP
+- NPC-Siege: Proof of concept for AI interacting with objects, see RVExt. This example is a siege where a defender repairs walls while they are being attacked. WIP
 
 ## Health Bar
 RV-HonorAI comes with a health bar prefab called CharCanvas. If this is added as a child of a NPC the health bar will automatically be displayed and updated.
-Unfortunatly in 1.0 it is broken due to a missing font and image. I have included a fixed version under prefabs called CharCanvasFixed.
+Unfortunately in 1.0 it is broken due to a missing font and image. I have included a fixed version under prefabs called CharCanvasFixed.
 The fix was;
 - Open the CharCanvas prefab. Set the font in the "text" and "healthNumber". I used the Unity supplied Arial.
 - In the "GameObject" (yes it is called that!) set the Source Image, I used UISprite and then set the Image Type to Filled and fill origin to Left.
 
 ## RV-HonorAI Flee Example
 The RedCubeMan does not flee, this is due to his courage being too high relative to the danger from the three BlueCubeMan. Setting the RedCubeMan Courage to 2.5 under the Combat tab will allow the flee action to start.
+
+## Script ShowAiPath
+The ShowAiPath script makes the path chosen by NavMeshAgent visible in the editor. It is intended for diagnosing problems with AI paths. To use it add it to any AI character as a component.
 
 ## RVExt
 My first go at extending RV-Honor so that AI can interact with non AI objects. I have implemented the ability to Target(attack), Use and Heal objects. The objective is to allow the creation of AI characters that can interact with there surroundings, examples; Farmers, animals and destructible/repairable objects.
