@@ -1,0 +1,20 @@
+{
+    "name": "RVExt",
+    "rootNamespace": "RVExt",
+    "references": [
+        "GUID:990210827db4a7040ab6b254fcd0696c",
+        "GUID:6ee51335402e7e1499e8f7c6c63554a3",
+        "GUID:84977cd25ace261448622ca1e57d97b0",
+        "GUID:29777498d8fd5a1498343693dd8d3616",
+        "GUID:1b5b6fff8fa7f81468f7b6831cc21c77"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
