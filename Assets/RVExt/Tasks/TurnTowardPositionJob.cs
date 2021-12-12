@@ -11,7 +11,7 @@ namespace RVExt
     /// <summary>
     /// Rrotate ai agent toward a position using simple transform manipulation and by using root motion
     /// </summary>
-    public class TurnTowardPosition : AiJob
+    public class TurnTowardPositionJob : AiJob
     {
         [SerializeField]
         private Vector3Provider _position;
